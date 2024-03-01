@@ -22,13 +22,17 @@ public class TaxiServiceImplement implements TaxiService{
         return taxiRepository.findAll();
     }*/ //Este se comento para hacer la paginacion
 
+    public TaxiServiceImplement(TaxiRepository taxiRepository) {
+        this.taxiRepository = taxiRepository;
+    }
+
     @Override
     @Transactional
     public Page<Taxi> findAll(Pageable pageable) {
         return taxiRepository.findAll(pageable);
     }
 
-    @Override
+    /*@Override
     @Transactional
     public Taxi save(Taxi taxi) {
         return taxiRepository.save(taxi);
@@ -44,5 +48,5 @@ public class TaxiServiceImplement implements TaxiService{
     @Transactional
     public void delete(Taxi taxi) {
         taxiRepository.delete(taxi);
-    }
+    }*/
 }

@@ -9,7 +9,7 @@ public interface TaxiService {
     @Transactional
     Page<Taxi> findAll(Pageable pageable);
 
-    public Taxi save(Taxi taxi);
+    /*public Taxi save(Taxi taxi);
     public Taxi findById(Integer id);
-    public void delete(Taxi taxi);
+    public void delete(Taxi taxi);*/
 }
