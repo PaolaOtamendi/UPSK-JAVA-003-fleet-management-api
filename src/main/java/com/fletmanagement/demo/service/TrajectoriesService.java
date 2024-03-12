@@ -1,11 +1,14 @@
 package com.fletmanagement.demo.service;
 
 import com.fletmanagement.demo.model.Taxi;
+import com.fletmanagement.demo.model.Trajectories;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 
-public interface TaxiService {
+public interface TrajectoriesService {
+
     @Transactional
-    Page<Taxi> findAll(Pageable pageable);
+    /*Page<Trajectories> findAll(Pageable pageable);*/
+    public Page<Trajectories> findAll(Integer taxiId, String date, Pageable pageable);
 }
