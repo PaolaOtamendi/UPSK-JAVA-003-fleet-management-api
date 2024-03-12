@@ -15,13 +15,6 @@ public class TaxiServiceImplement implements TaxiService{
     @Autowired
     private TaxiRepository taxiRepository;
 
-    /*@Override
-    @Transactional
-    public List<Taxi> findAll() {
-        /*return (List<Taxi>) taxiRepository.findAll();
-        return taxiRepository.findAll();
-    }*/ //Este se comento para hacer la paginacion
-
     public TaxiServiceImplement(TaxiRepository taxiRepository) {
         this.taxiRepository = taxiRepository;
     }
@@ -31,22 +24,4 @@ public class TaxiServiceImplement implements TaxiService{
     public Page<Taxi> findAll(Pageable pageable) {
         return taxiRepository.findAll(pageable);
     }
-
-    /*@Override
-    @Transactional
-    public Taxi save(Taxi taxi) {
-        return taxiRepository.save(taxi);
-    }
-
-    @Override
-    @Transactional
-    public Taxi findById(Integer id) {
-        return taxiRepository.findById(id).orElse(null);
-    }
-
-    @Override
-    @Transactional
-    public void delete(Taxi taxi) {
-        taxiRepository.delete(taxi);
-    }*/
 }
