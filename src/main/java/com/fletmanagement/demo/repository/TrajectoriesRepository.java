@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
 public interface TrajectoriesRepository extends JpaRepository<Trajectories, Long> {
     /*Page<Trajectories> findAll(Pageable pageable);*/
     // Este codigo solo es para prueba
-    @Query("SELECT t FROM Trajectories t WHERE t.taxiId = :taxiId AND TO_CHAR(t.date, 'YYYY, MM, DD') = :date")
+    @Query(value = "SELECT t FROM Trajectories t WHERE t.taxiId = :taxiId AND TO_CHAR(t.date, 'YYYY, MM, DD') = :date", nativeQuery = true)
     public Page<Trajectories> findAll(@Param("taxiId") Integer taxiId, @Param("date") String date, Pageable pageable);
 }
