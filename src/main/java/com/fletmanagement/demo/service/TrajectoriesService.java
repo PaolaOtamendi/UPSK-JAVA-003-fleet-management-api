@@ -1,6 +1,5 @@
 package com.fletmanagement.demo.service;
 
-import com.fletmanagement.demo.model.Taxi;
 import com.fletmanagement.demo.model.Trajectories;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,5 +9,5 @@ public interface TrajectoriesService {
 
     @Transactional
     /*Page<Trajectories> findAll(Pageable pageable);*/
-    public Page<Trajectories> findAll(Integer taxiId, String date, Pageable pageable);
+    public Page<Trajectories> findTaxiHistoryByTaxiIdAndDate(Integer taxiId, String date, Pageable pageable);
 }

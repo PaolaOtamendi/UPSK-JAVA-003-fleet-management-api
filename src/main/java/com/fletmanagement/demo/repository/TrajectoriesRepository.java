@@ -1,6 +1,5 @@
 package com.fletmanagement.demo.repository;
 
-import com.fletmanagement.demo.model.Taxi;
 import com.fletmanagement.demo.model.Trajectories;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,6 +12,6 @@ import org.springframework.stereotype.Repository;
 public interface TrajectoriesRepository extends JpaRepository<Trajectories, Long> {
     /*Page<Trajectories> findAll(Pageable pageable);*/
     // Este codigo solo es para prueba
-    @Query(value = "SELECT t FROM Trajectories t WHERE t.taxiId = :taxiId AND TO_CHAR(t.date, 'YYYY, MM, DD') = :date", nativeQuery = true)
-    public Page<Trajectories> findAll(@Param("taxiId") Integer taxiId, @Param("date") String date, Pageable pageable);
+    @Query(value = "SELECT * FROM trajectories t WHERE t.taxi_id = :taxiId AND TO_CHAR(t.date, 'YYYY-MM-DD') = :date ", nativeQuery = true)
+    public Page<Trajectories> findTaxiHistoryByTaxiIdAndDate(@Param("taxiId") Integer taxiId, @Param("date") String date, Pageable pageable);
 }
