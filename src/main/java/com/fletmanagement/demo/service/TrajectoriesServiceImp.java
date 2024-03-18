@@ -1,6 +1,5 @@
 package com.fletmanagement.demo.service;
 
-import com.fletmanagement.demo.model.Taxi;
 import com.fletmanagement.demo.model.Trajectories;
 import com.fletmanagement.demo.repository.TrajectoriesRepository;
 import jakarta.transaction.Transactional;
@@ -25,8 +24,8 @@ public class TrajectoriesServiceImp implements TrajectoriesService {
     @Transactional
     /*public Page<Trajectories> findAll(Pageable pageable) {
         return trajectoriesRepository.findAll(pageable);}*/
-    public Page<Trajectories> findAll(Integer taxiId, String date, Pageable pageable) {
-        return trajectoriesRepository.findAll(taxiId, date, pageable);
+    public Page<Trajectories> findTaxiHistoryByTaxiIdAndDate(Integer taxiId, String date, Pageable pageable) {
+        return trajectoriesRepository.findTaxiHistoryByTaxiIdAndDate(taxiId, date, pageable);
     }
 }
 

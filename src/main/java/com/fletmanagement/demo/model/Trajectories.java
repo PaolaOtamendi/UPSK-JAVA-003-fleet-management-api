@@ -12,7 +12,7 @@ public class Trajectories {
     private Long id;
 
     @Column(name = "taxi_id")
-    private int taxiId;
+    private Integer taxiId;
 
     @Column(name = "date")
     private LocalDateTime date;
